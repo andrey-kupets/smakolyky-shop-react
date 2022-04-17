@@ -2,6 +2,8 @@ import React from "react";
 import { FormControl, Input } from '@mui/material';
 import { FormSubmitButton } from "../../helper-copmonents";
 
+import { login } from '../../services';
+
 export const Login = (props) => {
   const [values, setValues] = React.useState({
     email: '',
@@ -9,12 +11,12 @@ export const Login = (props) => {
   });
 
   const handleChange = (type) => (e) => {
-    setValues({...values, [type]: e.target.value})
+    setValues({ ...values, [type]: e.target.value })
   };
 
-  const formSubmit = (e) => {
+  const formSubmit = async (e) => {
     e.preventDefault();
-    console.log(values);
+    await login(values);
   };
 
   return (
