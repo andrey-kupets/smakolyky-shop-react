@@ -9,12 +9,16 @@ export const Login = (props) => {
   });
 
   const handleChange = (type) => (e) => {
-    console.log(type);
-    console.log(e);
+    setValues({...values, [type]: e.target.value})
+  };
+
+  const formSubmit = (e) => {
+    e.preventDefault();
+    console.log(values);
   };
 
   return (
-    <div>
+    <form>
       <FormControl>
         <Input
           type='email'
@@ -30,7 +34,7 @@ export const Login = (props) => {
           onChange={handleChange('password')}
         />
       </FormControl>
-      <FormSubmitButton>Login</FormSubmitButton>
-    </div>
+      <FormSubmitButton formSubmit={formSubmit}>Login</FormSubmitButton>
+    </form>
   )
 }
