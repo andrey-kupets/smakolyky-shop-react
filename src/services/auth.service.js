@@ -12,4 +12,14 @@ export const login = async (data) => {
   } catch (e) {
     alert(JSON.stringify(e.response.data, null, 2));
   }
-}
+};
+
+export const register = async (data) => {
+  try {
+    const response = await axios.post(`${url}/users`, data);
+
+    return response.data;
+  } catch (e) {
+    alert(JSON.stringify(e.response.data, null, 2));
+  }
+};

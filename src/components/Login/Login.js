@@ -14,9 +14,11 @@ export const Login = (props) => {
     setValues({ ...values, [type]: e.target.value })
   };
 
-  const formSubmit = async (e) => {
-    e.preventDefault();
-    await login(values);
+  const formSubmit = async () => {
+    const {access_token, refresh_token} = await login(values);
+
+    localStorage.setItem('access_token', access_token);
+    localStorage.setItem('refresh_token', refresh_token);
   };
 
   return (

@@ -1,11 +1,11 @@
 import React from "react";
-import { login } from "../../services";
+import { register } from "../../services";
 import { FormControl, Input } from "@mui/material";
 import { FormSubmitButton } from "../../helper-copmonents";
 
 export const Register = () => {
   const [values, setValues] = React.useState({
-    age: 0,
+    age: '',
     email: '',
     gender: 'male',
     name: '',
@@ -15,16 +15,16 @@ export const Register = () => {
   });
 
   const handleChange = (type) => (e) => {
-    setValues({ ...values, [type]: e.target.value })
+    setValues({ ...values, [type]: e.target.value });
   };
 
   const genderChange = (e) => {
-    console.log(e.target.value);
+    setValues({ ...values, gender: e.target.value });
   };
 
   const formSubmit = async (e) => {
     e.preventDefault();
-    await login(values);
+    await register(values);
   };
 
   return (
@@ -52,12 +52,16 @@ export const Register = () => {
           type='radio'
           name='gender'
           value='male'
-          checked onChange={genderChange}/>
+          defaultChecked
+          onClick={genderChange}/>Male
+      {/*</FormControl>*/}
+
+      {/*<FormControl>*/}
         <input
           type='radio'
           name='gender'
-          placeholder='female'
-          onChange={genderChange}/>
+          value='female'
+          onClick={genderChange}/>Female
       {/*</FormControl>*/}
       <br/>
       <FormControl>
@@ -73,7 +77,7 @@ export const Register = () => {
         <Input
           type='password'
           color='primary'
-          placeholder='Your password'
+          placeholder='********'
           onChange={handleChange('password')}
         />
       </FormControl>
