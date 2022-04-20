@@ -1,27 +1,31 @@
 import './App.css';
 import { HeaderBlock, Login, Register } from "./components";
 import {
-  Link,
-  // Switch,
-  // Route
+  Switch,
+  Route
 } from "react-router-dom";
+import { EmailConfirmer } from "./helper-copmonents";
 
 function App() {
   return (
     <div>
-      <HeaderBlock/>
-      <Link to='/'>
-        <Login/>
-      </Link>
-      <Link to='/register'>
-        <Register/>
-      </Link>
+      <Switch>
+        <Route path='/' exact>
+          <HeaderBlock/>
+        </Route>
 
-      {/*<Switch>*/}
-      {/*  <Route path='/'>*/}
-      {/*    <Login/>*/}
-      {/*  </Route>*/}
-      {/*</Switch>*/}
+        <Route path='/login'>
+          <Login/>
+        </Route>
+
+        <Route path='/register'>
+          <Register/>
+        </Route>
+
+        <Route path='/email/confirm:token'>
+          <EmailConfirmer/>
+        </Route>
+      </Switch>
 
       {/*<Routes>    -- for version 6 and up and works incorrect now cause 'Routes' are not exported still*/}
       {/*  <Route path='/'>*/}
