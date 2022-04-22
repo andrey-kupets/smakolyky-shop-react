@@ -31,8 +31,7 @@ export const confirmEmail = async (token) => {
           'Authorization': token
         }
       }
-  )
-    ;
+    );
 
     return response.data;
   } catch (e) {

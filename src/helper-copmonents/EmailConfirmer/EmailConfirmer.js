@@ -14,7 +14,7 @@ export const EmailConfirmer = (props) => {
 
   return (
     <div>
-      Confirm
+      rest
     </div>
   )
 }

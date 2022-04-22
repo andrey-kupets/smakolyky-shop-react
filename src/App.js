@@ -22,9 +22,7 @@ function App() {
           <Register/>
         </Route>
 
-        <Route path='/email/confirm:token'>
-          <EmailConfirmer/>
-        </Route>
+        <Route path='/email/confirm/:token' component={EmailConfirmer}/>
       </Switch>
 
       {/*<Routes>    -- for version 6 and up and works incorrect now cause 'Routes' are not exported still*/}
