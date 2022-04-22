@@ -1,7 +1,7 @@
 import React from "react";
 import { register } from "../../services";
 import { FormControl, Input } from "@mui/material";
-import { FormSubmitButton } from "../../helper-copmonents";
+import { FormSubmitButton } from "../../helper-components";
 
 export const Register = () => {
   const [values, setValues] = React.useState({

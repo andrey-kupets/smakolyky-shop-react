@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { EmailConfirmer } from "./helper-copmonents";
+import { EmailConfirmer } from "./helper-components";
 
 function App() {
   return (
