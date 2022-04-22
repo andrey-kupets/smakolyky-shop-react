@@ -1,5 +1,5 @@
 import './App.css';
-import { HeaderBlock, Login, Register } from "./components";
+import { HeaderBlock, Login, Logout, Register } from "./components";
 import {
   Switch,
   Route
@@ -16,6 +16,10 @@ function App() {
 
         <Route path='/login'>
           <Login/>
+        </Route>
+
+        <Route path='/logout'>
+          <Logout/>
         </Route>
 
         <Route path='/register'>

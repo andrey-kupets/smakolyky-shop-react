@@ -4,17 +4,17 @@ import { confirmEmail } from "../../services";
 export const EmailConfirmer = (props) => {
   const { match: { params: { token } } } = props;
 
-  const load = async () => {
+  const sendConfirm = async () => {
     await confirmEmail(token);
   };
 
   useEffect(() => {
-    load();
+    sendConfirm();
   }, []);
 
   return (
     <div>
-      rest
+      Register confirmed
     </div>
   )
 }
